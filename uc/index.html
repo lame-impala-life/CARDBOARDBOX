@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<title>Unit Circle Thing</title>
+			<meta charset="UTF-8">
+			<style type="text/css">
+				@import url('https://fonts.googleapis.com/css?family=Roboto');
+				
+				* {
+					font-family: 'Roboto', sans-serif;
+					position: absolute;
+					margin: 0;
+					padding: 0;
+					border: 0;
+					box-sizing: border-box;	
+				}
+				body {
+					background: #abcef0;
+				}
+				
+				#c {
+					top: 30vh;
+					left: 30vh;
+					border-radius: 100%;
+					height: 42vh;
+					width: 42vh;
+					background: #fff000;
+				}
+				
+				#p1 {
+					top: 27.5vh;
+					left: 48.5vh;
+					border-radius: 100%;
+					height: 5vh;
+					width: 5vh;
+					background: #f000ff;
+				}
+				
+				#p2 {
+					top: 48.5vh;
+					left: 69.5vh;
+					border-radius: 100%;
+					height: 5vh;
+					width: 5vh;
+					background: #f00f00;
+				}
+				
+				#p3 {
+					top: 48.5vh;
+					left: 27.5vh;
+					border-radius: 100%;
+					height: 5vh;
+					width: 5vh;
+					background: #0f00ff;
+				}
+				
+				#p4 {
+					top: 69.5vh;
+					left: 48.5vh;
+					border-radius: 100%;
+					height: 5vh;
+					width: 5vh;
+					background: #EA9D31;
+				}
+				
+				.qb {
+					height: 21vh;
+					width: 21vh;
+					color: rgba(0,0,0,0);
+				}
+				
+				.qb:hover {
+					background: #000000;
+					color: #fff000;
+				}
+				
+				#qb1 {
+					top: 30vh;
+					left: 51vh;
+				}
+				
+				#qb2 {
+					top: 30vh;
+					left: 30vh;
+				}
+				
+				#qb3 {
+					top:51vh;
+					left: 30vh;
+				}
+				
+				#qb4 {
+					top: 51vh;
+					left: 51vh;
+				}
+				
+				.qb p {
+					font-size: 21vh;
+					z-index: 1;
+				}
+				
+				#qk1 {
+					font-size: 6vh;
+					color: #f00f00;
+					top: 51vh;
+					left: 72vh;
+				}
+				
+				#qk2 {
+					font-size: 6vh;
+					color: #f000ff;
+					top: 28vh;
+					left: 51vh;
+				}
+				
+				#qk3 {
+					font-size: 6vh;
+					color: #0f00ff;
+					top: 51vh;
+					left: 17vh;
+				}
+				
+				#qk4 {
+					font-size: 6vh;
+					color: #EA9D31;
+					top: 72vh;
+					left: 51vh;
+				}
+				
+				#db {
+					top: 5vh;
+					left: 100vh;
+					height: 5vh;
+					width: 10vh;
+					background: #05b05a;
+					color: #fff;
+				}
+				
+				#db:hover {
+					border: 2px solid #000;	
+				}
+				
+				#rb {
+					top: 5vh;
+					left: 112vh;
+					height: 5vh;
+					width: 10vh;
+					background: #05b05a;
+					color: #fff;
+				}
+				
+				#rb:hover {
+					border: 2px solid #000;
+				}
+				
+				#xyb {
+					top: 5vh;
+					left: 132vh;
+					height: 5vh;
+					width: 10vh;
+					color: #fff;
+					background: #D68A11;
+				}
+				#xyb:hover {
+					border: 2px solid #000;
+				}
+				
+				#dg1 {
+					top: 52vh;
+					left: 85vh;
+					color: #f00f00;
+				}
+				#dg2 {
+					top: 21vh;
+					left: 49vh;
+					color: #f000ff;
+				}
+				#dg3 {
+					top: 52vh;
+					left: 12vh;
+					color: #0f00ff;
+				}
+				
+				#dg4 {
+					top: 80vh;
+					left: 51vh;
+					color: #EA9D31;
+				}
+				
+				#rd1 {
+					top: 55vh;
+					left: 85vh;
+					color: #f00f00;
+				}
+				
+				#rd2 {
+					top: 24vh;
+					left: 49vh;
+					color: #f000ff;
+				}
+				
+				#rd3 {
+					top: 55vh;
+					left: 12vh;
+					color: #0f00ff;
+				}
+				
+				#rd4 {
+					top: 83vh;
+					left: 51vh;
+					color: #EA9D31;
+				}
+				
+				.pt {
+					height: 2.5vh;
+					width: 2.5vh;
+					border-radius: 100%;
+					background: #fff;
+				}
+				
+				#p5 {
+					top: 41vh;
+					left: 69vh;
+				}
+				#p6 {
+					top: 36vh;
+					left: 66vh;
+				}
+				#p7 {
+					top: 32vh;
+					left: 61.5vh;
+				}
+				
+				#p8 {
+					top: 32vh;
+					left: 38.5vh;
+				}
+				
+				#p9 {
+					top: 36vh;
+					left: 34vh;
+				}
+				#p10 {
+					top: 41vh;
+					left: 30.5vh;
+				}
+				
+				#p11 {
+					top: 59vh;
+					left: 30.5vh;
+				}
+				
+				#p12 {
+					top: 64vh;
+					left: 34vh;
+				}
+				
+				#p13 {
+					top: 68vh;
+					left: 38.5vh;
+				}
+				
+				#p14 {
+					top: 68vh;
+					left: 61.5vh;
+				}
+				
+				#p15 {
+					top: 64vh;
+					left: 66vh;
+				}
+				
+				#p16 {
+					top: 59vh;
+					left: 69vh;
+				}
+				
+				#qk5 {
+					font-size: 18pt;
+					color: #fff;
+					top: 42vh;
+					left: 72vh;
+				}
+				
+				#qk6 {
+					font-size: 18pt;
+					color: #fff;
+					top: 34vh;
+					left: 69vh;
+				}
+				
+				#qk7 {
+					font-size: 18pt;
+					color: #fff;
+					top: 28vh;
+					left: 63vh;
+				}
+				
+				#qk8 {
+					font-size: 18pt;
+					color: #fff;
+					top: 28vh;
+					left: 24vh;
+				}
+				
+				#qk9 {
+					font-size: 18pt;
+					color: #fff;
+					top: 34vh;
+					left: 13vh;
+				}
+				
+				#qk10 {
+					font-size: 18pt;
+					color: #fff;
+					top: 42vh;
+					left: 12vh;
+				}
+				
+				#qk11 {
+					font-size: 18pt;
+					color: #fff;
+					top: 59vh;
+					left: 8.5vh;
+				}
+				
+				#qk12 {
+					font-size: 18pt;
+					color: #fff;
+					top: 65vh;
+					left: 9vh;
+				}
+				
+				#qk13 {
+					font-size: 18pt;
+					color: #fff;
+					top: 71vh;
+					left: 22vh;
+				}
+				
+				#qk14 {
+					font-size: 18pt;
+					color: #fff;
+					top: 70vh;
+					left: 63vh;
+				}
+				
+				#qk15 {
+					font-size: 18pt;
+					color: #fff;
+					top: 65vh;
+					left: 68vh;
+				}
+				
+				#qk16 {
+					font-size: 18pt;
+					color: #fff;
+					top: 60vh;
+					left: 71vh;
+				}
+				
+				#dg5 {
+					color: #000;
+					top: 41.5vh;
+					left: 88.5vh;
+				}
+				#dg6 {
+					color: #000;
+					top: 33.5vh;
+					left: 89vh;
+				}
+				
+				#dg7 {
+					color: #000;
+					top: 27.5vh;
+					left: 79.5vh;
+				}
+				
+				#dg8 {
+					color: #000;
+					top: 27.5vh;
+					left: 19vh;
+				}
+				
+				#dg9 {
+					color: #000;
+					top: 33.5vh;
+					left: 8.5vh;
+				}
+				
+				#dg10 {
+					color: #000;
+					top: 41.5vh;
+					left: 7.5vh;
+				}
+				
+				#dg11 {
+					color: #000;
+					top: 58vh;
+					left: 4vh;
+				}
+				
+				#dg12 {
+					color: #000;
+					top: 64vh;
+					left: 5vh;
+				}
+				
+				#dg13 {
+					color: #000;
+					top: 70.5vh;
+					left: 17.5vh;
+				}
+				
+				#dg14 {
+					color: #000;
+					top: 69.5vh;
+					left: 81vh;
+				}
+				
+				#dg15 {
+					color: #000;
+					top: 64.5vh;
+					left: 89.5vh;
+				}
+				
+				#dg16 {
+					color: #000;
+					top: 59vh;
+					left: 88vh;
+				}
+				
+				#rd5 {
+					color: #000;
+					top: 44vh;
+					left: 88vh;
+				}
+				
+				#rd6 {
+					color: #000;
+					top: 36vh;
+					left: 89vh;
+				}
+				
+				#rd7 {
+					color: #000;
+					top: 29.5vh;
+					left: 79.5vh;
+				}
+				
+				#rd8 {
+					color: #000;
+					top: 30vh;
+					left: 19vh;
+				}
+				
+				#rd9 {
+					color: #000;
+					top: 36vh;
+					left: 8vh;
+				}
+				
+				#rd10 {
+					color: #000;
+					top: 44vh;
+					left: 7vh;
+				}
+				
+				#rd11 {
+					color: #000;
+					top: 60.5vh;
+					left: 4vh;
+				}
+				
+				#rd12 {
+					color: #000;
+					top: 66.5vh;
+					left: 4.5vh;
+				}
+				
+				#rd13 {
+					color: #000;
+					top: 73vh;
+					left: 17vh;
+				}
+				
+				#rd14 {
+					color: #000;
+					top: 72vh;
+					left: 81vh;
+				}
+				
+				#rd15 {
+					color: #000;
+					top: 67vh;
+					left: 89.5vh;
+				}
+				
+				#rd16 {
+					color: #000;
+					top: 61.5vh;
+					left: 88vh;
+				}
+			</style>
+			<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+			<script type="text/javascript">
+				$(document).ready(function () {
+					$("#db").on("click", function () {$(".dg").toggle();});
+					$("#rb").on("click", function () {$(".rd").toggle();});
+					$("#xyb").on("click", function () {$(".xy").toggle();});
+				});
+			</script>
+		</head>
+		<body>
+			<div id="c"></div>
+			
+			<!-- POINTS -->
+			<div id="p1"></div>
+			<div id="p2"></div>
+			<div id="p3"></div>
+			<div id="p4"></div>
+			<!-- POINTS Q1 -->
+			<div class="pt" id="p5"></div>
+			<div class="pt" id="p6"></div>
+			<div class="pt" id="p7"></div>
+			
+			<!-- POINTS Q2 -->
+			<div class="pt" id="p8"></div>
+			<div class="pt" id="p9"></div>
+			<div class="pt" id="p10"></div>
+			
+			<!-- POINTS Q3 -->
+			<div class="pt" id="p11"></div>
+			<div class="pt" id="p12"></div>
+			<div class="pt" id="p13"></div>
+			
+			<!-- POINTS Q4 -->
+			<div class="pt" id="p14"></div>
+			<div class="pt" id="p15"></div>
+			<div class="pt" id="p16"></div>
+			
+			<!-- COORDINATES -->
+			<p class="xy" id="qk1"><b>(1,0)</b></p>
+			<p class="xy" id="qk2"><b>(0,1)</b></p>
+			<p class="xy" id="qk3"><b>(-1,0)</b></p>
+			<p class="xy" id="qk4"><b>(0,-1)</b></p>
+			
+			<!-- COORDINATES Q1 -->
+			<p class="xy" id="qk5"><b>(&radic;(3)/2,1/2)</b></p>
+			<p class="xy" id="qk6"><b>(&radic;(2)/2,&radic;(2)/2)</b></p>
+			<p class="xy" id="qk7"><b>(1/2,&radic;(3)/2)</b></p>
+			
+			<!-- COORDINATES Q2 -->
+			<p class="xy" id="qk8"><b>(-1/2,&radic;(3)/2)</b></p>
+			<p class="xy" id="qk9"><b>(&minus;&radic;(2)/2,&radic;(2)/2)</b></p>
+			<p class="xy" id="qk10"><b>(&minus;&radic;(3)/2,1/2)</b></p>
+			
+			<!-- COORDINATES Q3 -->
+			<p class="xy" id="qk11"><b>(&minus;&radic;(3)/2,&minus;1/2)</b></p>
+			<p class="xy" id="qk12"><b>(&minus;&radic;(2)/2,&minus;&radic;(2)/2)</b></p>
+			<p class="xy" id="qk13"><b>(&minus;1/2,&minus;&radic;(3)/2)</b></p>
+			
+			<!-- COORDINATES Q4 -->
+			<p class="xy" id="qk14"><b>(1/2,&minus;&radic;(3)/2)</b></p>
+			<p class="xy" id="qk15"><b>(&radic;(2)/2,&minus;&radic;(2)/2)</b></p>
+			<p class="xy" id="qk16"><b>(&radic;(3)/2,-1/2)</b></p>
+			
+			
+			<!-- DEGREES -->
+			<p class="dg" id="dg1"><b>0°v360°</b></p>
+			<p class="dg" id="dg2"><b>90°</b></p>
+			<p class="dg" id="dg3"><b>180°</b></p>
+			<p class="dg" id="dg4"><b>270°</b></p>
+			
+			<!-- DEGREES Q1 -->
+			<p class="dg" id="dg5"><b>30°</b></p>
+			<p class="dg" id="dg6"><b>45°</b></p>
+			<p class="dg" id="dg7"><b>60°</b></p>
+			
+			<!-- DEGREES Q2 -->
+			<p class="dg" id="dg8"><b>120°</b></p>
+			<p class="dg" id="dg9"><b>135°</b></p>
+			<p class="dg" id="dg10"><b>150°</b></p>
+			
+			<!-- DEGREES Q3 -->
+			<p class="dg" id="dg11"><b>210°</b></p>
+			<p class="dg" id="dg12"><b>225°</b></p>
+			<p class="dg" id="dg13"><b>240°</b></p>
+			
+			<!-- DEGREES Q4 -->
+			<p class="dg" id="dg14"><b>300°</b></p>
+			<p class="dg" id="dg15"><b>315°</b></p>
+			<p class="dg" id="dg16"><b>330°</b></p>
+			
+			<!-- RADIANS -->
+			<p class="rd" id="rd1"><b>0v2π</b></p>
+			<p class="rd" id="rd2"><b>π/2</b></p>
+			<p class="rd" id="rd3"><b>π</b></p>
+			<p class="rd" id="rd4"><b>3π/2</b></p>
+			
+			<!-- RADIANS Q1 -->
+			<p class="rd" id="rd5"><b>π/6</b></p>
+			<p class="rd" id="rd6"><b>π/4</b></p>
+			<p class="rd" id="rd7"><b>π/3</b></p>
+			
+			<!-- RADIANS Q2 -->
+			<p class="rd" id="rd8"><b>2π/3</b></p>
+			<p class="rd" id="rd9"><b>3π/4</b></p>
+			<p class="rd" id="rd10"><b>5π/6</b></p>
+			
+			<!-- RADIANS Q3 -->
+			<p class="rd" id="rd11"><b>7π/6</b></p>
+			<p class="rd" id="rd12"><b>5π/4</b></p>
+			<p class="rd" id="rd13"><b>4π/3</b></p>
+			
+			<!-- RADIANS Q4 -->
+			<p class="rd" id="rd14"><b>5π/3</b></p>
+			<p class="rd" id="rd15"><b>7π/4</b></p>
+			<p class="rd" id="rd16"><b>11π/6</b></p>
+			
+			<!-- QUADRANTS -->
+			<div class="qb" id="qb1"><p>I</p></div>
+			<div class="qb" id="qb2"><p>II</p></div>
+			<div class="qb" id="qb3"><p>III</p></div>
+			<div class="qb" id="qb4"><p>IV</p></div>
+			
+			<!-- BUTTONS -->
+			<div id="db"><h1>DEG</h1></div>
+			<div id="rb"><h1>RAD</h1></div>
+			<div id="xyb"><h1>XY</h1></div>
+		</body>
+	</html>
